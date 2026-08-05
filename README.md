@@ -15,8 +15,8 @@ Inside that directory, you can run several commands:
 
 We suggest that you begin by typing:
 
-  cd webapp3
-  npm install (once)
-  npm start
+  - cd webapp3
+  - npm install (once)
+  - npm start
 
 Happy hacking!
