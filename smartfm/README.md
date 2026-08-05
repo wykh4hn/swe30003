@@ -64,9 +64,14 @@ screen, so no external notes are needed during a demonstration.
 | Customer | `hoa.nguyen@hoaphat.example` | Placing, tracking and paying for shipments |
 | Customer | `khanh.do@klp.example` | Second customer — capacity race, ownership checks |
 | Branch staff | `staff.hcm@abctrans.example` | Ho Chi Minh queue, fleet, drivers, reports |
-| Branch staff | `staff.han@abctrans.example` | Ha Noi branch console |
+| Branch staff | `staff.han@abctrans.example` | Ha Noi branch console — queue isolation between branches |
+| Branch staff | `staff.dad@abctrans.example` | Da Nang hub console — the trunk-route branch |
 | Driver | `hung.tran@abctrans.example` | Class FC driver, Ho Chi Minh City |
 | Driver | `mai.le@abctrans.example` | Class C driver, Ho Chi Minh City |
+| Driver | `tuan.dang@abctrans.example` | Class D driver, Da Nang — a driver sees only their own jobs |
+
+All three branches have a staff account (`staff.<code>@abctrans.example`, where the code is `hcm`,
+`han` or `dad`), and all six seeded drivers can sign in with their own email address.
 
 ## 3. Every command
 

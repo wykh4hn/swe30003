@@ -92,7 +92,7 @@ Sign out and sign in as **`staff.hcm@abctrans.example`**.
 | --- | --- | --- |
 | 1 | The **Order queue** tab opens. | 📷**H** *Pending review (1)* with `SFM-2026-000001`, plus a second table of all branch orders. |
 | 2 | Click **Review**. | 📷**O** The verification report: customer, cargo, both addresses, the planned route (`960 km, ~18.2 h`), the quote, and a green banner *"All checks passed. This order can be accepted."* |
-| 3 | **Wrong branch (queue isolation).** Sign in as `staff.han@abctrans.example` in another window and try to open the same order. | 📷**V** *"Order SFM-2026-000001 belongs to another branch and cannot be processed here."* |
+| 3 | **Wrong branch (queue isolation).** Sign in as `staff.han@abctrans.example` (or `staff.dad@abctrans.example`) in another window and try to open the same order. | 📷**V** *"Order SFM-2026-000001 belongs to another branch and cannot be processed here."* Their **Fleet** and **Drivers** tabs also show only their own resources — Da Nang sees `43C-119.87` and `43D-402.31` and one driver, never Ho Chi Minh's. |
 | 4 | Back as HCM staff, click **Accept order**. | 📷**O** Green banner *"Order SFM-2026-000001 accepted. Assign a vehicle and driver below."* The assignment table appears. |
 | 5 | Inspect the assignment table. | 📷**O** Only *legal* pairings: the driver's licence covers the vehicle and neither is committed during the window. `51C-123.45` (class C) is offered with a class C or FC driver; `29LD-990.22` (class FC) never appears with a class C driver. |
 | 6 | Tick one pairing. | The line beneath reads *"Selected capacity: 10,000 kg of 2,000 kg required."* |
@@ -218,6 +218,7 @@ Sign in as **`staff.hcm@abctrans.example`**.
 | 3 | **Variant 1b — empty period.** Change the period to **Today** and generate. | 📷**O** *"No data available for this period"* with the message *"No shipment activity for Day — …"*. A readable result, not an error. |
 | 4 | Switch to **Resource utilisation**, period *This month*. | 📷**O** Average vehicle and driver utilisation, the number idle, and per-resource rows showing trips, committed hours and utilisation percentage — computable only because a completed itinerary survives its order. |
 | 5 | **Subtask 3 — cross-branch.** Change the scope to **All branches** and regenerate. | 📷**O** Every branch's vehicles and drivers, with the scope label *"All branches"*. |
+| 5a | Sign in as `staff.dad@abctrans.example` and generate the same report on **My branch only**. | 📷**O** *"No data available for this period"* — Da Nang has had no traffic. Switching that same account to **All branches** shows the national figures, which is exactly the fragmentation Assignment 1 identified as a pain point: one branch can now see the whole picture without leaving its own console. |
 | 6 | Choose **Custom range**, pick a from/to, generate. | 📷**I** 📷**O** The report for exactly that window. |
 | 7 | Click **Sign out**. | 📷**X** Back to the sign-in screen with an empty form. The session is destroyed server-side; the browser's stored token is cleared. |
 | 8 | Press `Ctrl+C` in the server terminal. | 📷**X** *"[SmartFM] Shutting down. All data is already persisted under data/."* |

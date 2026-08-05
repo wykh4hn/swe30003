@@ -326,10 +326,20 @@ export class SeedData {
       {
         role: 'Branch staff',
         username: 'staff.han@abctrans.example',
-        description: 'Ha Noi branch console.',
+        description: 'Ha Noi branch console — demonstrates queue isolation between branches.',
+      },
+      {
+        role: 'Branch staff',
+        username: 'staff.dad@abctrans.example',
+        description: 'Da Nang hub console — the trunk-route branch on the Ha Noi/Ho Chi Minh lanes.',
       },
       { role: 'Driver', username: 'hung.tran@abctrans.example', description: 'Class FC driver, Ho Chi Minh City.' },
       { role: 'Driver', username: 'mai.le@abctrans.example', description: 'Class C driver, Ho Chi Minh City.' },
+      {
+        role: 'Driver',
+        username: 'tuan.dang@abctrans.example',
+        description: 'Class D driver, Da Nang — used to show a driver sees only their own jobs.',
+      },
     ];
   }
 }
