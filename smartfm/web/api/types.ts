@@ -1,12 +1,4 @@
-/**
- * The shapes the server's `Presenter` sends to the browser.
- *
- * These interfaces are the client's half of the contract described on
- * `Presenter`. Declaring them explicitly — rather than passing `any` around —
- * means a change to a server projection breaks the build rather than a screen at
- * runtime, which is the practical benefit of running one language across both
- * tiers.
- */
+
 
 export interface MoneyView {
   amount: number;

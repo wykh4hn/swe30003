@@ -1,12 +1,4 @@
-/**
- * The presentation tier's single point of contact with the application server.
- *
- * Assignment 3 change C9. Every view calls a named method here rather than
- * building its own `fetch`, which means the token, the JSON headers and — most
- * importantly — the error contract are handled in exactly one place. When the
- * server rejects input, this class raises an `ApiError` carrying the per-field
- * messages, so a form can attach each one to the input that caused it.
- */
+
 
 export class ApiError extends Error {
   readonly code: string;
@@ -40,7 +32,7 @@ export class ApiClient {
     return this.token !== undefined;
   }
 
-  // ------------------------------------------------------------- transport
+  //transport
 
   private async request<T>(method: string, path: string, body?: Json): Promise<T> {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
@@ -91,7 +83,8 @@ export class ApiClient {
     return this.request<T>('DELETE', path, body);
   }
 
-  // -------------------------------------------------------- authentication
+// authentication
+
 
   signIn(username: string, password: string): Promise<Json> {
     return this.post<Json>('/api/auth/sign-in', { username, password });
@@ -113,7 +106,7 @@ export class ApiClient {
     return this.get<Json>('/api/health');
   }
 
-  // ---------------------------------------- business area 1: customer accounts
+  // business area 1: customer accounts
 
   register(body: Json): Promise<Json> {
     return this.post<Json>('/api/customers', body);
@@ -135,7 +128,7 @@ export class ApiClient {
     return this.get<Json[]>('/api/customers/me/notifications');
   }
 
-  // ------------------------------------------------ business area 2: fleet
+  //business area 2: fleet
 
   branches(): Promise<Json[]> {
     return this.get<Json[]>('/api/branches');
@@ -201,7 +194,7 @@ export class ApiClient {
     return this.post<Json>(`/api/drivers/${id}/reactivate`);
   }
 
-  // ------------------------------------------------ business area 3: ordering
+  // business area 3: ordering
 
   searchAvailability(body: Json): Promise<Json> {
     return this.post<Json>('/api/availability', body);
@@ -239,7 +232,7 @@ export class ApiClient {
     return this.post<Json>(`/api/orders/${id}/cancel`, { reason });
   }
 
-  // ------------------------------------------------ business area 4: dispatch
+  //business area 4: dispatch
 
   branchQueue(): Promise<Json[]> {
     return this.get<Json[]>('/api/branch/queue');
@@ -273,7 +266,7 @@ export class ApiClient {
     return this.post<Json>(`/api/branch/orders/${id}/dispatch`, { staffName });
   }
 
-  // ------------------------------------------------ business area 5: billing
+  // business area 5: billing
 
   invoices(): Promise<Json[]> {
     return this.get<Json[]>('/api/invoices');
@@ -291,7 +284,7 @@ export class ApiClient {
     return this.get<Json[]>('/api/receipts');
   }
 
-  // ----------------------------------------------- business area 6: tracking
+  // business area 6: tracking
 
   tracking(orderId: string): Promise<Json> {
     return this.get<Json>(`/api/orders/${orderId}/tracking`);
@@ -309,7 +302,7 @@ export class ApiClient {
     return this.post<Json>('/api/driver/updates', body);
   }
 
-  // ---------------------------------------------- business area 7: reporting
+  // business area 7: reporting
 
   shipmentReport(query: string): Promise<Json> {
     return this.get<Json>(`/api/reports/shipments?${query}`);
