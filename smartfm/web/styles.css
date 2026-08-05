@@ -193,7 +193,7 @@ a {
   align-items: center;
 }
 
-/* ------------------------------------------------------------------- cards */
+/*cards */
 
 .card {
   background: var(--surface);
@@ -257,7 +257,7 @@ a {
   color: var(--text-muted);
 }
 
-/* ------------------------------------------------------------------- forms */
+/*forms */
 
 .field {
   margin-bottom: 13px;
@@ -342,7 +342,7 @@ legend {
   margin-top: 3px;
 }
 
-/* ----------------------------------------------------------------- buttons */
+/*buttons */
 
 button.btn {
   appearance: none;
@@ -401,7 +401,7 @@ button.btn.small {
   font-size: 0.84rem;
 }
 
-/* ---------------------------------------------------------------- messages */
+/*messages */
 
 .banner {
   border-radius: var(--radius);
@@ -458,7 +458,7 @@ button.btn.small {
   color: var(--text);
 }
 
-/* ------------------------------------------------------------------ tables */
+/*tables */
 
 .table-wrap {
   overflow-x: auto;
@@ -504,7 +504,7 @@ td.wrap {
   min-width: 200px;
 }
 
-/* ------------------------------------------------------------------ badges */
+/*badges */
 
 .badge {
   display: inline-block;
@@ -546,7 +546,7 @@ td.wrap {
   color: var(--danger);
 }
 
-/* --------------------------------------------------------------- timelines */
+/*timelines */
 
 .timeline {
   list-style: none;
@@ -593,7 +593,7 @@ td.wrap {
   font-weight: 600;
 }
 
-/* ------------------------------------------------------------------- misc */
+/*misc */
 
 .mono {
   font-family: var(--mono);

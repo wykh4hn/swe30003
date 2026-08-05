@@ -37,18 +37,7 @@ const TABS_BY_ROLE: Readonly<Record<SessionView['role'], Tab[]>> = {
   DRIVER: [{ id: 'jobs', label: 'My jobs' }],
 };
 
-/**
- * The application shell.
- *
- * Assignment 3 change C9 — the user-interface design Assignment 2 explicitly
- * excluded. The structure follows the three actors Assignment 1 identified:
- * each role sees only its own screens, which is both a usability decision and a
- * safety one, since the server refuses cross-role requests anyway.
- *
- * The shell holds exactly three pieces of state — the session, the reference
- * data every screen shares, and a refresh counter. Everything else belongs to
- * the view that owns it, so no screen can quietly depend on another's state.
- */
+
 export function App(): ReactNode {
   const api = useMemo(() => new ApiClient(), []);
   const [session, setSession] = useState<SessionView | undefined>(undefined);
@@ -105,7 +94,7 @@ export function App(): ReactNode {
     try {
       await api.signOut();
     } catch {
-      // Signing out locally is what matters; the server session expires anyway.
+      // Signing out locally is what matters ~ the server session expires anyway.
     }
     window.localStorage.removeItem(TOKEN_KEY);
     api.setToken(undefined);
@@ -189,7 +178,7 @@ export function App(): ReactNode {
           <p className="muted">Loading reference data…</p>
         ) : (
           <>
-            {/* ------------------------------------------------------ customer */}
+            {/*customer */}
             {tab === 'new-order' ? (
               <NewOrderView api={api} reference={reference} onOrderPlaced={refresh} />
             ) : null}
@@ -206,7 +195,7 @@ export function App(): ReactNode {
               />
             ) : null}
 
-            {/* -------------------------------------------------- branch staff */}
+            {/*branch staff */}
             {tab === 'queue' ? (
               <QueueView api={api} staffName={session.username} refreshKey={refreshKey} onChanged={refresh} />
             ) : null}
@@ -214,7 +203,7 @@ export function App(): ReactNode {
             {tab === 'drivers' ? <DriversView api={api} reference={reference} refreshKey={refreshKey} /> : null}
             {tab === 'reports' ? <ReportsView api={api} refreshKey={refreshKey} /> : null}
 
-            {/* --------------------------------------------------------- driver */}
+            {/*driver */}
             {tab === 'jobs' ? <DriverJobsView api={api} reference={reference} refreshKey={refreshKey} /> : null}
           </>
         )}
