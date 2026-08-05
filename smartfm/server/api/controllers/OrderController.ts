@@ -3,10 +3,7 @@ import type { Router } from '../Router.ts';
 import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
-/**
- * Business area 3 — Order Placement, Amendment and Cancellation
- * (Assignment 1 Tasks 4, 5 and 6).
- */
+/** Order Placement, Amendment and Cancellation */
 export class OrderController extends ApiController {
   constructor(services: Services) {
     super(services);
@@ -24,7 +21,7 @@ export class OrderController extends ApiController {
       return result;
     });
 
-    // Assignment 1 Task 4 subtask 5: hold the chosen capacity while deciding.
+    // Hold the chosen capacity while deciding.
     router.post('/api/reservations', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       const now = new Date();
@@ -52,7 +49,7 @@ export class OrderController extends ApiController {
       return { released };
     });
 
-    // Assignment 1 Task 5: place the order.
+    // Place the order.
     router.post('/api/orders', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       const order = await this.services.orders.placeOrder(session.personId, {
@@ -75,7 +72,7 @@ export class OrderController extends ApiController {
       return Presenter.order(order);
     });
 
-    // Assignment 1 Task 6: modify the order while it is still modifiable.
+    // Modify the order while it is still modifiable.
     router.patch('/api/orders/:orderId', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       const order = await this.services.orders.amendOrder(session.personId, this.param(context, 'orderId'), {
@@ -87,12 +84,12 @@ export class OrderController extends ApiController {
       return Presenter.order(order);
     });
 
-    // Assignment 1 Task 6: cancel, releasing every resource the order held.
+    // Cancel, releasing every resource the order held.
     router.post('/api/orders/:orderId/cancel', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       const orderId = this.param(context, 'orderId');
       const order = await this.services.orders.cancelOrder(session.personId, orderId, context.body['reason']);
-      // Variant 6a: a paid order that is cancelled is refunded, not deleted.
+      // A paid order that is cancelled is refunded, not deleted.
       const invoice = await this.services.billing.refundForCancelledOrder(orderId);
       return {
         order: Presenter.order(order),

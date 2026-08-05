@@ -3,14 +3,13 @@ import type { Router } from '../Router.ts';
 import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
-/** Business area 1 — Customer Account Management (Assignment 1 Task 3). */
+/** Customer Account Management */
 export class AccountController extends ApiController {
   constructor(services: Services) {
     super(services);
   }
 
   override register(router: Router): void {
-    // Registration is the one endpoint that must be reachable without a session.
     router.post('/api/customers', async (context) => {
       const customer = await this.services.accounts.register({
         fullName: context.body['fullName'],
@@ -49,7 +48,6 @@ export class AccountController extends ApiController {
       return Presenter.customer(customer);
     });
 
-    // Assignment 1 Task 3 variant 5a: refused while orders or invoices are open.
     router.post('/api/customers/me/close', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       const customer = await this.services.accounts.closeAccount(session.personId);

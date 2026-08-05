@@ -5,7 +5,7 @@ import { Presenter } from '../Presenter.ts';
 import { NotFoundError } from '../../domain/shared/DomainError.ts';
 
 /**
- * Business area 5 — Billing and Payment (Assignment 1 Task 9).
+ * Billing and Payment 
  *
  * Settlement is simulated throughout, as the Assignment 3 specification allows.
  * The response always carries the strategy's own message, which states plainly

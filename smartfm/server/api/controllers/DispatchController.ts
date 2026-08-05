@@ -3,7 +3,7 @@ import type { Router } from '../Router.ts';
 import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
-/** Business area 4 — Order Processing and Dispatch (Assignment 1 Task 7). */
+/** Order Processing and Dispatch */
 export class DispatchController extends ApiController {
   constructor(services: Services) {
     super(services);
@@ -21,7 +21,7 @@ export class DispatchController extends ApiController {
       return (await this.services.dispatch.branchOrders(session.branchId)).map((order) => Presenter.order(order));
     });
 
-    // Assignment 1 Task 7 subtasks 2-3: verification report before deciding.
+    // Verification report before deciding.
     router.get('/api/branch/orders/:orderId/review', async (context) => {
       const session = this.requireBranchSession(context);
       const orderId = this.param(context, 'orderId');
@@ -59,7 +59,7 @@ export class DispatchController extends ApiController {
       return this.services.dispatch.suggestAssignments(session.branchId, this.param(context, 'orderId'));
     });
 
-    // Assignment 1 Task 7 subtask 5: bind resources, creating route + itineraries.
+    // Bind resources, creating route + itineraries.
     router.post('/api/branch/orders/:orderId/assign', async (context) => {
       const session = this.requireBranchSession(context);
       const itineraries = await this.services.dispatch.assignResources(

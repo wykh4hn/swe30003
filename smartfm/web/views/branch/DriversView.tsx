@@ -6,7 +6,7 @@ import { ApiError } from '../../api/ApiClient.ts';
 import type { DriverView, ReferenceData } from '../../api/types.ts';
 
 /**
- * Business area 2, second half — manage driver information (Assignment 1 Task 2).
+ * Manage driver information
  *
  * Registering a driver also creates their sign-in account, so a newly added
  * driver can immediately use the driver view — the dependency between this

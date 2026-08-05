@@ -5,7 +5,7 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { ResourceReportView, ShipmentReportView } from '../../api/types.ts';
 
 /**
- * Business area 7 — management reporting (Assignment 1 Task 10).
+ * Management reporting
  *
  * The two tabs are the two report classes change C2 produced. Assignment 2's
  * single `Report` would have had to render both of these from one shape; keeping
@@ -13,7 +13,7 @@ import type { ResourceReportView, ShipmentReportView } from '../../api/types.ts'
  * — on-time delivery for shipments, idle resources for utilisation.
  *
  * Choosing a period with no activity shows a "no data" result rather than an
- * error, which is Assignment 1 Task 10 variant 1b.
+ * error.
  */
 export function ReportsView(props: { api: ApiClient; refreshKey: number }): ReactNode {
   const [tab, setTab] = useState<'SHIPMENTS' | 'RESOURCES'>('SHIPMENTS');

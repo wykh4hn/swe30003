@@ -3,14 +3,14 @@ import type { Router } from '../Router.ts';
 import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
-/** Business area 6 — Shipment Tracking (Assignment 1 Task 8). */
+/** Shipment Tracking */
 export class TrackingController extends ApiController {
   constructor(services: Services) {
     super(services);
   }
 
   override register(router: Router): void {
-    // Assignment 1 Task 8 subtasks 2-3: the customer's timeline and ETA.
+    // The customer's timeline and ETA.
     router.get('/api/orders/:orderId/tracking', async (context) => {
       const session = this.requireSession(context, 'CUSTOMER');
       return this.services.tracking.timelineForCustomer(session.personId, this.param(context, 'orderId'));
@@ -22,7 +22,7 @@ export class TrackingController extends ApiController {
       return this.services.tracking.timelineByReference(session.personId, this.param(context, 'reference'));
     });
 
-    // Assignment 1 Task 8 subtask 1: the driver's live jobs.
+    // The driver's live jobs.
     router.get('/api/driver/jobs', async (context) => {
       const session = this.requireSession(context, 'DRIVER');
       return this.services.tracking.jobsForDriver(session.personId);

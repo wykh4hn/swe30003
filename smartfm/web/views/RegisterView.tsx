@@ -6,7 +6,7 @@ import { ApiError } from '../api/ApiClient.ts';
 import type { ReferenceData } from '../api/types.ts';
 
 /**
- * Business area 1 — customer self-registration (Assignment 1 Task 3, subtasks 1-3).
+ * Customer self-registration
  *
  * The form validates in the browser as the user types *and* shows whatever the
  * server rejects, mapped back onto the field that caused it. Nothing relies on

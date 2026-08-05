@@ -15,7 +15,7 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { InvoiceView, PaymentOutcomeView, PaymentView, ReceiptView, ReferenceData } from '../../api/types.ts';
 
 /**
- * Business area 5 — pay an invoice and receive a receipt (Assignment 1 Task 9).
+ * Pay an invoice and receive a receipt (Assignment 1 Task 9).
  *
  * Settlement is simulated, as the Assignment 3 specification permits, and the
  * screen says so plainly rather than pretending otherwise. Both failure paths

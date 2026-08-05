@@ -1,15 +1,6 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { ApiError } from '../api/ApiClient.ts';
 
-/**
- * Shared presentation components.
- *
- * Assignment 1 §9.2 required consistent terminology and visual standards across
- * every screen, and real-time validation of user input. Both are enforced here
- * rather than trusted to each view: a screen cannot render an input without a
- * label, and cannot render an error anywhere other than beneath the field that
- * caused it.
- */
 
 interface FieldProps {
   label: string;

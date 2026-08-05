@@ -16,8 +16,8 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { OrderView, ReferenceData, TimelineView } from '../../api/types.ts';
 
 /**
- * Business areas 3 and 6 for the customer — my orders, amendment, cancellation
- * and tracking (Assignment 1 Tasks 6 and 8).
+ * My orders, amendment, cancellation
+ * and tracking
  *
  * Which actions appear is driven entirely by the server's answer: `isModifiable`
  * comes from the published lifecycle table (change C15), so the interface can

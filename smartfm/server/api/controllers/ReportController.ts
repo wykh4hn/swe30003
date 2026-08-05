@@ -4,7 +4,7 @@ import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
 /**
- * Business area 7 — Management Reporting (Assignment 1 Task 10).
+ * Management Reporting
  *
  * Two endpoints, because change C2 split Assignment 2's single generic `Report`
  * into two focused reports. A branch sees its own figures by default and can ask
