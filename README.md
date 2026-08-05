@@ -1,8 +1,10 @@
 Start the app by running:
 
-  - cd smartfm
-  - npm install (once)
-  - npm run server
-  - npm run dev
+  - 2 cmd terminals
+  - `cd smartfm` (on both)
+  - `npm install` (once on either terminal)
+  - `npm run server` on one
+  - `npm run dev` on the other
+  - click on the link in the `npm run dev` terminal
 
 Happy ordering!
