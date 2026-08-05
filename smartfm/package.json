@@ -1,0 +1,34 @@
+{
+  "name": "smartfm",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SmartFM - Smart Fleet Management System. SWE30003 Assignment 3 (Design Implementation), Group 1.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "compile": "npm run typecheck && npm run typecheck:web",
+    "test": "node server/test/run-tests.ts",
+    "server": "node server/main.ts",
+    "dev": "vite",
+    "build": "npm run compile && vite build",
+    "preview": "vite preview",
+    "verify": "npm run compile && npm run test",
+    "seed:reset": "node server/tools/reset-data.ts"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.2.0"
+  }
+}

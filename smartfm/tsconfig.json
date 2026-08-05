@@ -1,0 +1,33 @@
+{
+  // Server / domain compilation profile.
+  // Strict settings are deliberate: the domain model is the deliverable of this
+  // assignment, so the compiler is used as the first line of design verification.
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+
+    // Node >= 22.6 executes TypeScript directly by erasing types. These two
+    // options make `tsc` reject any syntax Node cannot erase (enum, namespace,
+    // constructor parameter properties) and allow the explicit `.ts` specifiers
+    // that Node's ESM loader requires.
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
+    "strict": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true
+  },
+  "include": ["server/**/*.ts"]
+}
