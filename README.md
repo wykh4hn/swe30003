@@ -7,4 +7,8 @@ Start the app by running:
   - `npm run dev` on the other
   - click on the link in the `npm run dev` terminal
 
+Run app test cases:
+  - Open 1 cmd terminal
+  - `cd smartfm`
+  - `npm run test`
 Happy ordering!
