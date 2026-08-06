@@ -10,7 +10,7 @@ import type { ResourceReportView, ShipmentReportView } from '../../api/types.ts'
  * The two tabs are the two report classes change C2 produced. Assignment 2's
  * single `Report` would have had to render both of these from one shape; keeping
  * them separate is why each screen can show figures that actually mean something
- * — on-time delivery for shipments, idle resources for utilisation.
+ * on-time delivery for shipments, idle resources for utilisation.
  *
  * Choosing a period with no activity shows a "no data" result rather than an
  * error.

@@ -1,7 +1,6 @@
 import type { ChangeEvent, ReactNode } from 'react';
 import { ApiError } from '../api/ApiClient.ts';
 
-
 interface FieldProps {
   label: string;
   name: string;

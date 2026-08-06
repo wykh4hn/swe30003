@@ -11,7 +11,7 @@ import type { ReferenceData, VehicleView } from '../../api/types.ts';
  * All five subtasks are on this one screen: add a vehicle, update its details,
  * change its operational status, search the list, and retire it. Retirement is a
  * soft delete and is refused while the vehicle is on an active itinerary
- * (variant 5a) — the refusal comes from `Vehicle.retire()` itself, so the
+ * (variant 5a), the refusal comes from `Vehicle.retire()` itself, so the
  * message shown here is the domain's own words.
  */
 export function FleetView(props: { api: ApiClient; reference: ReferenceData; refreshKey: number }): ReactNode {

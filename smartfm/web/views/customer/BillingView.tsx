@@ -21,8 +21,8 @@ import type { InvoiceView, PaymentOutcomeView, PaymentView, ReceiptView, Referen
  * screen says so plainly rather than pretending otherwise. Both failure paths
  * are reachable on demand so they can be demonstrated:
  *
- *   card ending 0000 → declined     card ending 9999 → gateway timeout
- *   cash below the amount due       → refused with the shortfall explained
+ *   card ending 0000 → declined  card ending 9999 → gateway timeout
+ *   cash below the amount due  → refused with the shortfall explained
  */
 export function BillingView(props: { api: ApiClient; reference: ReferenceData; refreshKey: number }): ReactNode {
   const [invoices, setInvoices] = useState<InvoiceView[]>([]);

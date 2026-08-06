@@ -9,7 +9,7 @@ import type { DriverView, ReferenceData } from '../../api/types.ts';
  * Manage driver information
  *
  * Registering a driver also creates their sign-in account, so a newly added
- * driver can immediately use the driver view — the dependency between this
+ * driver can immediately use the driver view, the dependency between this
  * business area and shipment tracking is real, not stubbed.
  *
  * Deactivation is refused while an itinerary is open (variant 3a), and the

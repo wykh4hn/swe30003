@@ -1,0 +1,15 @@
+{
+  "name": "swe30003",
+  "private": true,
+  "workspaces": [
+    "smartfm"
+  ],
+  "scripts": {
+    "test": "npm --prefix smartfm test",
+    "dev": "npm --prefix smartfm run dev",
+    "start": "npm --prefix smartfm run dev",
+    "build": "npm --prefix smartfm run build",
+    "typecheck": "npm --prefix smartfm run typecheck",
+    "seed:reset": "npm --prefix smartfm run seed:reset"
+  }
+}
