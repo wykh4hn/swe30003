@@ -3,7 +3,7 @@ import type { Router } from '../Router.ts';
 import type { Services } from '../../infrastructure/ApplicationContext.ts';
 import { Presenter } from '../Presenter.ts';
 
-/** Business area 2 — Fleet and Driver Resource Management (Assignment 1 Tasks 1 and 2). */
+/** Fleet and Driver Resource Management */
 export class FleetController extends ApiController {
   constructor(services: Services) {
     super(services);
@@ -14,7 +14,6 @@ export class FleetController extends ApiController {
       (await this.services.fleet.listBranches()).map((branch) => Presenter.branch(branch)),
     );
 
-    // -------------------------------------------------------------- vehicles
 
     router.get('/api/vehicles', async (context) => {
       const session = this.requireSession(context, 'BRANCH_STAFF');
@@ -67,7 +66,7 @@ export class FleetController extends ApiController {
       return Presenter.vehicle(vehicle);
     });
 
-    // Assignment 1 Task 1 variant 5a: soft delete, refused while assigned.
+    // Soft delete, refused while assigned.
     router.post('/api/vehicles/:vehicleId/retire', async (context) => {
       this.requireBranchSession(context);
       return Presenter.vehicle(await this.services.fleet.retireVehicle(this.param(context, 'vehicleId')));
@@ -78,7 +77,6 @@ export class FleetController extends ApiController {
       return Presenter.vehicle(await this.services.fleet.reinstateVehicle(this.param(context, 'vehicleId')));
     });
 
-    // --------------------------------------------------------------- drivers
 
     router.get('/api/drivers', async (context) => {
       const session = this.requireSession(context, 'BRANCH_STAFF');
@@ -136,7 +134,7 @@ export class FleetController extends ApiController {
       return Presenter.driver(driver);
     });
 
-    // Assignment 1 Task 2 variant 3a: refused while an itinerary is open.
+    // Refused while an itinerary is open.
     router.post('/api/drivers/:driverId/deactivate', async (context) => {
       this.requireBranchSession(context);
       return Presenter.driver(await this.services.fleet.deactivateDriver(this.param(context, 'driverId')));

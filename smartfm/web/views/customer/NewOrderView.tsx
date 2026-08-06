@@ -21,7 +21,7 @@ function isoInDays(days: number): string {
 }
 
 /**
- * Business area 3 — place a shipment order (Assignment 1 Tasks 4 and 5).
+ * Place a shipment order
  *
  * The screen follows the four steps of the task description exactly: describe
  * the shipment, compare the options SmartFM offers, review the itemised quote
@@ -183,7 +183,7 @@ export function NewOrderView(props: {
     }
   }
 
-  /** Assignment 1 Task 4 subtask 5: hold the capacity while the customer decides. */
+  /** Hold the capacity while the customer decides. */
   async function chooseOption(option: AvailabilityOptionView): Promise<void> {
     setError(undefined);
     setBusy(true);
@@ -272,7 +272,6 @@ export function NewOrderView(props: {
 
       <ErrorBanner error={error} />
 
-      {/* ---------------------------------------------------- step 1: details */}
       {step === 'DETAILS' ? (
         <form
           onSubmit={(event) => {
@@ -486,7 +485,6 @@ export function NewOrderView(props: {
         </form>
       ) : null}
 
-      {/* ---------------------------------------------------- step 2: options */}
       {step === 'OPTIONS' && result !== undefined ? (
         <>
           <Banner kind={result.options.length === 0 ? 'warn' : 'info'}>{result.message}</Banner>
@@ -558,7 +556,6 @@ export function NewOrderView(props: {
         </>
       ) : null}
 
-      {/* ----------------------------------------------------- step 3: review */}
       {step === 'REVIEW' && chosen !== undefined ? (
         <>
           <Banner kind="info" title={`Held for you until ${formatDateTime(holds[0]?.expiresAt ?? '')}`}>
@@ -628,7 +625,6 @@ export function NewOrderView(props: {
         </>
       ) : null}
 
-      {/* ------------------------------------------------------- step 4: done */}
       {step === 'DONE' && placed !== undefined ? (
         <Card title="Order placed">
           <Banner kind="success" title={`Reference ${placed.reference}`}>

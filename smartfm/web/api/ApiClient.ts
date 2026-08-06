@@ -32,7 +32,7 @@ export class ApiClient {
     return this.token !== undefined;
   }
 
-  //transport
+  // transport
 
   private async request<T>(method: string, path: string, body?: Json): Promise<T> {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
@@ -83,8 +83,7 @@ export class ApiClient {
     return this.request<T>('DELETE', path, body);
   }
 
-// authentication
-
+  // authentication
 
   signIn(username: string, password: string): Promise<Json> {
     return this.post<Json>('/api/auth/sign-in', { username, password });
@@ -128,7 +127,7 @@ export class ApiClient {
     return this.get<Json[]>('/api/customers/me/notifications');
   }
 
-  //business area 2: fleet
+  // business area 2: fleet
 
   branches(): Promise<Json[]> {
     return this.get<Json[]>('/api/branches');
@@ -232,7 +231,7 @@ export class ApiClient {
     return this.post<Json>(`/api/orders/${id}/cancel`, { reason });
   }
 
-  //business area 4: dispatch
+  // business area 4: dispatch
 
   branchQueue(): Promise<Json[]> {
     return this.get<Json[]>('/api/branch/queue');

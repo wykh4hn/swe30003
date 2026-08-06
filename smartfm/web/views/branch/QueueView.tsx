@@ -14,7 +14,7 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { AssignmentSuggestionView, InvoiceView, OrderReviewView, OrderView } from '../../api/types.ts';
 
 /**
- * Business area 4 — process and dispatch incoming orders (Assignment 1 Task 7).
+ * Process and dispatch incoming orders
  *
  * The branch console walks the four subtasks in order: pick an order off the
  * queue, review the verification report, decide, then assign resources and

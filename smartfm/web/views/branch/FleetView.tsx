@@ -6,7 +6,7 @@ import { ApiError } from '../../api/ApiClient.ts';
 import type { ReferenceData, VehicleView } from '../../api/types.ts';
 
 /**
- * Business area 2, first half — manage vehicle information (Assignment 1 Task 1).
+ * Manage vehicle information
  *
  * All five subtasks are on this one screen: add a vehicle, update its details,
  * change its operational status, search the list, and retire it. Retirement is a

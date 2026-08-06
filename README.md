@@ -1,22 +1,10 @@
-Inside that directory, you can run several commands:
+Start the app by running:
 
-  npm start
-    Starts the development server.
+  - 2 cmd terminals
+  - `cd smartfm` (on both)
+  - `npm install` (once on either terminal)
+  - `npm run server` on one
+  - `npm run dev` on the other
+  - click on the link in the `npm run dev` terminal
 
-  npm run build
-    Bundles the app into static files for production.
-
-  npm test
-    Starts the test runner.
-
-  npm run eject
-    Removes this tool and copies build dependencies, configuration files
-    and scripts into the app directory. If you do this, you can’t go back!
-
-We suggest that you begin by typing:
-
-  cd webapp3
-  npm install (once)
-  npm start
-
-Happy hacking!
+Happy ordering!

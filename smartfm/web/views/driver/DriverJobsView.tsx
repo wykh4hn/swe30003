@@ -16,7 +16,7 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { DriverJobView, OrderView, ReferenceData } from '../../api/types.ts';
 
 /**
- * Business area 6, driver side — report progress from the road (Assignment 1 Task 8).
+ * Report progress from the road
  *
  * Deliberately the simplest screen in the system: a driver is using a phone in a
  * cab, so it shows the current job, four buttons for the common checkpoints, and

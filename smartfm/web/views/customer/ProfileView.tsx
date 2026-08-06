@@ -5,7 +5,7 @@ import type { ApiClient } from '../../api/ApiClient.ts';
 import type { CustomerView, NotificationView, ReferenceData } from '../../api/types.ts';
 
 /**
- * Business area 1 — the customer's own account (Assignment 1 Task 3, subtasks 4-5).
+ * The customer's own account
  *
  * The closure button demonstrates variant 5a directly: the server refuses while
  * open orders or unpaid invoices exist, and the reason is shown verbatim. The
